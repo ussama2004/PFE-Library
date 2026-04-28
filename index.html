@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مكتبة الأمل</title>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">📚 مكتبة الأمل</a>
+        <nav>
+            <a href="index.html">الرئيسية</a>
+            <a href="#categories">الفئات</a>
+            <a href="pages/login.html">تسجيل الدخول</a>
+            <a href="pages/register.html">التسجيل</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>ابحث عن كتابك المفضل</h1>
+        <p>آلاف الكتب في متناول يدك</p>
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="ابحث عن كتاب...">
+            <button onclick="searchBook()">بحث</button>
+        </div>
+    </section>
+
+    <section id="categories" class="books">
+        <a href="categories/novels.html" class="book">
+            <img src="assets/images/photo_2026-04-15_10-25-07.jpg" alt="روايات">
+            <h3>روايات</h3>
+            <p>مجموعة متنوعة من الروايات العربية والعالمية</p>
+        </a>
+        <a href="categories/religion.html" class="book">
+            <img src="assets/images/ktab diniaa.jpg" alt="كتب دينية">
+            <h3>كتب دينية</h3>
+            <p>كتب إسلامية ودينية متنوعة</p>
+        </a>
+        <a href="categories/school.html" class="book">
+            <img src="assets/images/photo_2026-04-15_21-41-32.jpg" alt="كتب مدرسية">
+            <h3>كتب مدرسية</h3>
+            <p>كتب تعليمية للمراحل المختلفة</p>
+        </a>
+        <a href="categories/medical.html" class="book">
+            <img src="assets/images/photo_2026-04-15_21-45-58.jpg" alt="كتب طبية">
+            <h3>كتب طبية</h3>
+            <p>مراجع طبية وصحية</p>
+        </a>
+        <div class="book">
+            <img src="assets/images/photo_2026-04-15_10-24-58.jpg" alt="تطوير الذات">
+            <h3>تطوير الذات</h3>
+            <p>كتب للنمو الشخصي والمهني</p>
+        </div>
+        <div class="book">
+            <img src="assets/images/photo_2026-04-16_18-30-30.jpg" alt="كتب تاريخية">
+            <h3>كتب تاريخية</h3>
+            <p>تاريخ العالم والأمة</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>مكتبة الأمل</h3>
+                <p>منصة إلكترونية لقراءة وتحميل الكتب المتنوعة</p>
+            </div>
+            <div class="footer-section">
+                <h3>روابط سريعة</h3>
+                <p><a href="index.html">الرئيسية</a></p>
+                <p><a href="#categories">الفئات</a></p>
+                <p><a href="pages/login.html">تسجيل الدخول</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>اتصل بنا</h3>
+                <p>البريد الإلكتروني: info@maktabatalamal.com</p>
+                <p>الهاتف: +966 123 456 789</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 مكتبة الأمل - جميع الحقوق محفوظة</p>
+        </div>
+    </footer>
+
+    <script>
+        function searchBook() {
+            let input = document.getElementById("searchInput").value.toLowerCase();
+            let books = document.getElementsByClassName("book");
+            for (let i = 0; i < books.length; i++) {
+                let text = books[i].innerText.toLowerCase();
+                if (text.includes(input)) {
+                    books[i].style.display = "block";
+                } else {
+                    books[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
+</html>

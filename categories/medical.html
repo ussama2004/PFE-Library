@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>كتب طبية</title>
+
+<style>
+body{
+font-family:Arial;
+margin:0;
+background:#f4f6f9;
+}
+
+header{
+background:#27ae60;
+color:white;
+text-align:center;
+padding:15px;
+}
+
+.books{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+padding:30px;
+}
+
+.book{
+background:white;
+padding:15px;
+border-radius:12px;
+text-align:center;
+box-shadow:0 3px 8px rgba(0,0,0,0.1);
+}
+
+.book img{
+width:100%;
+height:180px;
+object-fit:cover;
+border-radius:10px;
+}
+
+button{
+margin-top:10px;
+padding:10px;
+width:100%;
+border:none;
+background:#27ae60;
+color:white;
+border-radius:6px;
+cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h2>📚 الكتب الطبية</h2>
+<a href="index.html" style="color:white;">رجوع</a>
+</header>
+
+<section class="books">
+
+<div class="book">
+<img src="images/med1.jpg">
+<p>تشريح جسم الإنسان</p>
+<a href="books/med1.pdf" target="_blank">
+<button>قراءة</button>
+</a>
+</div>
+
+<div class="book">
+<img src="images/med2.jpg">
+<p>علم الأمراض</p>
+<a href="books/med2.pdf" target="_blank">
+<button>قراءة</button>
+</a>
+</div>
+
+<div class="book">
+<img src="images/med3.jpg">
+<p>التمريض الأساسي</p>
+<a href="books/med3.pdf" target="_blank">
+<button>قراءة</button>
+</a>
+</div>
+
+</section>
+
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Search Result</title>
+
+<style>
+
+body{
+font-family: Arial;
+background:#f4f4f4;
+text-align:center;
+}
+
+table{
+margin:auto;
+border-collapse:collapse;
+width:70%;
+}
+
+th,td{
+border:1px solid #ccc;
+padding:10px;
+}
+
+th{
+background:#3498db;
+color:white;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h2>Search Results</h2>
+
+<table>
+
+<tr>
+<th>Title</th>
+<th>Author</th>
+<th>Publisher</th>
+</tr>
+
+<?php
+
+if($result->num_rows > 0){
+
+while($row = $result->fetch_assoc()){
+
+echo "<tr>";
+echo "<td>".$row['title']."</td>";
+echo "<td>".$row['author']."</td>";
+echo "<td>".$row['publisher']."</td>";
+echo "</tr>";
+
+}
+
+}
+else{
+
+echo "<tr><td colspan='3'>Book not available</td></tr>";
+
+}
+
+?>
+
+</table>
+
+</body>
+</html>

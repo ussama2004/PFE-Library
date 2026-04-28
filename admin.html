@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة الإدارة - مكتبة الأمل</title>
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">📚 مكتبة الأمل</a>
+        <nav>
+            <a href="index.html">الرئيسية</a>
+            <a href="admin.html">الإدارة</a>
+            <a href="pages/logout.php">تسجيل الخروج</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2>إدارة الكتب</h2>
+        <input type="hidden" id="editIndex">
+        <input type="text" id="title" placeholder="اسم الكتاب">
+        <input type="text" id="image" placeholder="رابط الصورة (مثل: assets/images/book.jpg)">
+        <input type="text" id="file" placeholder="رابط ملف PDF">
+        <button class="add" onclick="addBook()">إضافة كتاب</button>
+        <button class="update" onclick="updateBook()">تعديل كتاب</button>
+    </div>
+
+    <section class="books" id="bookList"></section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>مكتبة الأمل</h3>
+                <p>منصة إلكترونية لقراءة وتحميل الكتب المتنوعة</p>
+            </div>
+            <div class="footer-section">
+                <h3>روابط سريعة</h3>
+                <p><a href="index.html">الرئيسية</a></p>
+                <p><a href="admin.html">الإدارة</a></p>
+                <p><a href="pages/login.html">تسجيل الدخول</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>اتصل بنا</h3>
+                <p>البريد الإلكتروني: info@maktabatalamal.com</p>
+                <p>الهاتف: +966 123 456 789</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 مكتبة الأمل - جميع الحقوق محفوظة</p>
+        </div>
+    </footer>
+
+    <script>
+        let books = JSON.parse(localStorage.getItem("books")) || [];
+
+        function showBooks() {
+            let list = document.getElementById("bookList");
+            list.innerHTML = "";
+            books.forEach((b, index) => {
+                list.innerHTML += `
+                    <div class="book">
+                        <img src="${b.image}" alt="${b.title}">
+                        <h3>${b.title}</h3>
+                        <a href="${b.file}" target="_blank">
+                            <button>📖 قراءة</button>
+                        </a>
+                        <div class="small-btn">
+                            <button class="update" onclick="editBook(${index})">تعديل</button>
+                            <button class="delete" onclick="deleteBook(${index})">حذف</button>
+                        </div>
+                    </div>
+                `;
+            });
+            localStorage.setItem("books", JSON.stringify(books));
+        }
+
+        function addBook() {
+            let title = document.getElementById("title").value.trim();
+            let image = document.getElementById("image").value.trim();
+            let file = document.getElementById("file").value.trim();
+            if (title && image && file) {
+                books.push({ title, image, file });
+                clearForm();
+                showBooks();
+            } else {
+                alert("يرجى ملء جميع الحقول");
+            }
+        }
+
+        function deleteBook(index) {
+            if (confirm("هل أنت متأكد من حذف هذا الكتاب؟")) {
+                books.splice(index, 1);
+                showBooks();
+            }
+        }
+
+        function editBook(index) {
+            document.getElementById("title").value = books[index].title;
+            document.getElementById("image").value = books[index].image;
+            document.getElementById("file").value = books[index].file;
+            document.getElementById("editIndex").value = index;
+        }
+
+        function updateBook() {
+            let index = document.getElementById("editIndex").value;
+            if (index !== "") {
+                books[index].title = document.getElementById("title").value;
+                books[index].image = document.getElementById("image").value;
+                books[index].file = document.getElementById("file").value;
+                clearForm();
+                showBooks();
+            }
+        }
+
+        function clearForm() {
+            document.getElementById("title").value = "";
+            document.getElementById("image").value = "";
+            document.getElementById("file").value = "";
+            document.getElementById("editIndex").value = "";
+        }
+
+        showBooks();
+    </script>
+</body>
+</html>

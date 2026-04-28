@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>ثانية متوسط</title>
+
+<style>
+body{
+font-family:Arial;
+margin:0;
+background:#f4f6f9;
+}
+
+header{
+background:#16a085;
+color:white;
+text-align:center;
+padding:15px;
+}
+
+.subjects{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+padding:30px;
+}
+
+.card{
+background:white;
+padding:20px;
+text-align:center;
+border-radius:12px;
+box-shadow:0 3px 8px rgba(0,0,0,0.1);
+}
+
+.card img{
+width:100%;
+height:160px;
+object-fit:cover;
+border-radius:10px;
+}
+
+button{
+width:100%;
+padding:10px;
+margin-top:10px;
+border:none;
+background:#16a085;
+color:white;
+border-radius:6px;
+cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h2>📘 ثانية متوسط (2AM)</h2>
+<a href="middle.html" style="color:white;">رجوع</a>
+</header>
+
+<section class="subjects">
+
+<div class="card">
+<img src="images/math.jpg">
+<h3>رياضيات</h3>
+<a href="books/2am_math.pdf" target="_blank">
+<button>قراءة</button>
+</a>
+</div>
+
+<div class="card">
+<img src="images/science.jpg">
+<h3>علوم طبيعية</h3>
+<a href="books/2am_science.pdf" target="_blank">
+<button>قراءة</button>
+</a>
+</div>
+
+<div class="card">
+<img src="images/arabic.jpg">
+<h3>لغة عربية</h3>
+<a href="books/2am_arabic.pdf" target="_blank">
+<button>قراءة</button>
+</a>
+</div>
+
+<div class="card">
+<img src="images/french.jpg">
+<h3>فرنسية</h3>
+<a href="books/2am_french.pdf" target="_blank">
+<button>قراءة</button>
+</a>
+</div>
+
+<div class="card">
+<img src="images/english.jpg">
+<h3>إنجليزية</h3>
+<a href="books/2am_english.pdf" target="_blank">
+<button>قراءة</button>
+</a>
+</div>
+
+</section>
+
+</body>
+</html>

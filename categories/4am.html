@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>رابعة متوسط</title>
+
+<style>
+body{
+    font-family:Arial;
+    margin:0;
+    background:#f4f6f9;
+}
+
+header{
+    background:#2c3e50;
+    color:white;
+    text-align:center;
+    padding:15px;
+}
+
+.subjects{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    padding:30px;
+}
+
+.card{
+    background:white;
+    padding:20px;
+    text-align:center;
+    border-radius:12px;
+    box-shadow:0 3px 8px rgba(0,0,0,0.1);
+}
+
+.card img{
+    width:100%;
+    height:160px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+button{
+    margin-top:10px;
+    padding:10px;
+    border:none;
+    background:#4ca1af;
+    color:white;
+    border-radius:6px;
+    cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h2>رابعة متوسط</h2>
+<a href="middle.html" style="color:white;">رجوع</a>
+</header>
+
+<section class="subjects">
+
+<div class="card">
+<img src="images/math.jpg">
+<h3>رياضيات</h3>
+<a href="books/math4am.pdf" target="_blank">
+<button>قراءة</button>
+</a>
+</div>
+
+<div class="card">
+<img src="images/science.jpg">
+<h3>علوم طبيعية</h3>
+<a href="books/science4am.pdf" target="_blank">
+<button>قراءة</button>
+</a>
+</div>
+
+<div class="card">
+<img src="images/arabic.jpg">
+<h3>لغة عربية</h3>
+<a href="books/arabic4am.pdf" target="_blank">
+<button>قراءة</button>
+</a>
+</div>
+
+<div class="card">
+<img src="images/french.jpg">
+<h3>لغة فرنسية</h3>
+<a href="books/french4am.pdf" target="_blank">
+<button>قراءة</button>
+</a>
+</div>
+
+<div class="card">
+<img src="images/physics.jpg">
+<h3>فيزياء</h3>
+<a href="books/physics4am.pdf" target="_blank">
+<button>قراءة</button>
+</a>
+</div>
+
+</section>
+
+</body>
+</html>
